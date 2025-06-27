@@ -1,2 +1,2 @@
-# hospital_booking_system
+Hospital_bed_booking_system
 
