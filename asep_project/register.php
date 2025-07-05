@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($password === $cpassword) {
                 $pass = password_hash($password, PASSWORD_BCRYPT);
                 
-                $insertquery = "INSERT INTO signin (name,email, password ,cpassword) VALUES ('$name',$email', '$pass','$cpassword')";
+                $insertquery = "INSERT INTO signin (name,email, password ,cpassword) VALUES ('$name' , '$email' , '$pass','$cpassword')";
                 $check = mysqli_query($con, $insertquery);
                 
                 if ($check) {
