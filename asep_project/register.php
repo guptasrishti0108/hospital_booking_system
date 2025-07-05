@@ -5,6 +5,7 @@ include 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['Signup'])) {
+        $name=$_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $cpassword =  $_POST['confirm_password'];
@@ -54,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $db_pass=$email_pass['password'];
         if ($emaill==$db_email){
             $_SESSION['email']=$db_email;
+            $_SESSION['name'] = $name;
            if(password_verify($passwordl,$db_pass)){
           ?>
            <script>location.replace('index.php')</script>
@@ -342,6 +344,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form_fild signup_form">
                   <form method="post" action="register.php">
+                    <div class="input_group" >
+                        <input type="text" name="name" class="input" placeholder="Username" />
+                    </div>
                     <div class="input_group">
                         <input type="email" name="email" class="input" placeholder="Email Address" />
                     </div>
